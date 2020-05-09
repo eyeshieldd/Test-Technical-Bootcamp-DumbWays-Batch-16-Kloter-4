@@ -14,3 +14,4 @@ Terimakasih
 
 # soal no 123
 1. menggunakan bahasa pemrograman php
+2. tanpa menggunakan build in function php
