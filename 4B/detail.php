@@ -53,17 +53,13 @@ $id = $_GET["id"];
     <div class="jumbotron bg-light">
         <div class="container">
             <h2>Detail Film</h2>
-            <!-- <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p> -->
             <table class="table">
                 <thead>
-                    <!-- <tr>
-                        <th></th>
-                        <th></th>
-                    </tr> -->
+
                 </thead>
                 <tbody>
                     <?php
-                    // jalankan query untuk menampilkan semua data diurutkan berdasarkan nim
+                    # jalankan query untuk menampilkan data berdasarkan id
                     $query = "SELECT a.title, a.durasi, b.name as genre,c.name as writer,d.name as director, a.deskripsi
                                 FROM Film AS a
                                 LEFT JOIN Genre AS b
@@ -74,13 +70,13 @@ $id = $_GET["id"];
                                 ON a.id_genre = d.id
                                 WHERE a.id = $id";
                     $result = mysqli_query($koneksi, $query);
-                    //mengecek apakah ada error ketika menjalankan query
+
+                    # mengecek apakah ada error ketika menjalankan query
                     if (!$result) {
                         die("Query Error: " . mysqli_errno($koneksi) .
                             " - " . mysqli_error($koneksi));
                     }
-
-
+                    # perulangan untuk menampilkan data dalam tabel detail
                     while ($row = mysqli_fetch_assoc($result)) {
 
                     ?>

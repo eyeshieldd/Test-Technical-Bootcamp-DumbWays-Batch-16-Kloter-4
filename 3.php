@@ -1,7 +1,6 @@
 <?php
 function pattern($rows)
 {
-
     for ($i = 1; $i <= $rows; $i++) {
 
         for ($j = 1; $j <= $rows - $i; $j++)
@@ -14,6 +13,7 @@ function pattern($rows)
         echo "\n";
     }
 }
-
-$rows = 4;
+# inputan 
+$rows = 5;
+# run function pattern
 pattern($rows);

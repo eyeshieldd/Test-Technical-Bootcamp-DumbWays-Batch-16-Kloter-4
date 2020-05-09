@@ -111,6 +111,7 @@ include('koneksi.php'); //agar index terhubung dengan database, maka koneksi seb
                     <option>pilih</option>
 
                     <?php
+                    # menampilkan genre
                     $query = "SELECT * FROM Genre";
                     $result = mysqli_query($koneksi, $query);
                     print_r($result);
@@ -128,6 +129,7 @@ include('koneksi.php'); //agar index terhubung dengan database, maka koneksi seb
                     <option>pilih</option>
 
                     <?php
+                    # menampilkan writer
                     $query = "SELECT * FROM Writer";
                     $result = mysqli_query($koneksi, $query);
                     print_r($result);
@@ -145,6 +147,7 @@ include('koneksi.php'); //agar index terhubung dengan database, maka koneksi seb
                     <option>pilih</option>
 
                     <?php
+                    # menampilkan director
                     $query = "SELECT * FROM Director";
                     $result = mysqli_query($koneksi, $query);
                     while ($row = mysqli_fetch_assoc($result)) {

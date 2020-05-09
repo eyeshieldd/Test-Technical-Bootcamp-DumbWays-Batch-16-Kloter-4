@@ -58,20 +58,18 @@ include('koneksi.php'); //agar index terhubung dengan database, maka koneksi seb
         <div class="container">
             <div class="row">
                 <?php
-        // jalankan query untuk menampilkan semua data diurutkan berdasarkan nim
-        $query = "SELECT * FROM Film";
-        $result = mysqli_query($koneksi, $query);
-        //mengecek apakah ada error ketika menjalankan query
-        if (!$result) {
-          die("Query Error: " . mysqli_errno($koneksi) .
-            " - " . mysqli_error($koneksi));
-        }
+                # jalankan query untuk menampilkan semua data 
+                $result = mysqli_query($koneksi, $query);
+                # mengecek apakah ada error ketika menjalankan query
+                if (!$result) {
+                    die("Query Error: " . mysqli_errno($koneksi) .
+                        " - " . mysqli_error($koneksi));
+                }
 
-        //buat perulangan untuk element tabel dari data mahasiswa
-        // hasil query akan disimpan dalam variabel $data dalam bentuk array
-        // kemudian dicetak dengan perulangan while
-        while ($row = mysqli_fetch_assoc($result)) {
-        ?>
+
+                # cetak dengan perulangan while
+                while ($row = mysqli_fetch_assoc($result)) {
+                ?>
                 <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
                     <div class="card border-dark mb-3">
                         <img class="card-img-top" <img src="gambar/<?php echo $row['photo']; ?>"
@@ -91,8 +89,8 @@ include('koneksi.php'); //agar index terhubung dengan database, maka koneksi seb
 
 
                 <?php
-        }
-        ?>
+                }
+                ?>
             </div>
         </div>
     </div>
